@@ -5,7 +5,7 @@ class ScaffoldExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home-screen"),
+        title: Text("Welcome"),
         actions: [
           IconButton(
               icon: Icon(Icons.menu_rounded),
