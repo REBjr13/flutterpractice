@@ -19,7 +19,6 @@ class ScaffoldExample extends StatelessWidget {
         ],
         centerTitle: false,
         backgroundColor: Colors.purpleAccent.shade100,
-
       ),
       backgroundColor: Colors.blueGrey,
       body: Container(
