@@ -6,8 +6,6 @@ class ScaffoldExample extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home-screen"),
-        centerTitle: false,
-        backgroundColor: Colors.purpleAccent.shade100,
         actions: [
           IconButton(
               icon: Icon(Icons.menu_rounded),
@@ -19,20 +17,30 @@ class ScaffoldExample extends StatelessWidget {
               icon: Icon(Icons.account_circle_outlined),
               onPressed: () => debugPrint("account button tapped")),
         ],
+        centerTitle: false,
+        backgroundColor: Colors.purpleAccent.shade100,
+
       ),
       backgroundColor: Colors.blueGrey,
-      body: Center(
-        child: Center(
-          child: Text(
-            "Hello Robert!",
-            textDirection: TextDirection.ltr,
-            style: TextStyle(
-              wordSpacing: 4.3,
-              fontWeight: FontWeight.bold,
-              fontSize: 23.4,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              child: Text(
+                "Tap Me Fredrick!",
+                textDirection: TextDirection.ltr,
+                style: TextStyle(
+                  wordSpacing: 4.3,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23.4,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              onTap: () => debugPrint('true'),
+            )
+          ],
         ),
       ),
     );
