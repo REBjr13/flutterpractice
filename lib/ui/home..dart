@@ -5,7 +5,8 @@ class ScaffoldExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("VLC"),
+
+        title: Text("VLC clone", style: TextStyle(color: Colors.grey),),
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.search),
@@ -30,7 +31,7 @@ class ScaffoldExample extends StatelessWidget {
         ],
         centerTitle: false,
         backgroundColor: Colors.white,
-    foregroundColor: Colors.lightGreenAccent,
+        foregroundColor: Colors.lightGreenAccent,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.deepOrangeAccent[200],
@@ -47,24 +48,49 @@ class ScaffoldExample extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
       ),
+     
       bottomNavigationBar: BottomNavigationBar(
+        
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        type: BottomNavigationBarType.shifting,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.accessibility, color: Colors.deepOrangeAccent,), label: "Video"),
+              icon: Icon(
+                Icons.perm_media,
+                color: Colors.deepOrangeAccent,
+              ),
+              label: "Video"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.music_note_sharp,  color: Colors.deepOrangeAccent,), label: "Audio"),
+              icon: Icon(
+                Icons.music_note_sharp,
+                color: Colors.deepOrangeAccent,
+              ),
+              label: "Audio"),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.folder_rounded,
                 color: Colors.deepOrangeAccent,
               ),
               label: "Browse"),
-          //BottomNavigationBarItem(icon: Icon(Icons.folder_rounded), label: "Playlists"),
-          // BottomNavigationBarItem(icon: Icon(Icons.folder_rounded), label: "More"),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.playlist_play_rounded,
+              color: Colors.deepOrangeAccent,
+            ),
+            label: "Playlists",
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.more_horiz,
+                color: Colors.deepOrangeAccent,
+              ),
+              label: "More"),
         ],
-        iconSize: 15.0,
+
+        //iconSize: 15.0,
         backgroundColor: Colors.white,
-        onTap: (int i) {
+       /* onTap: (int i) {
           final snackBar = SnackBar(
             content: Text("Welcome"),
             backgroundColor: Colors.blue,
@@ -73,16 +99,17 @@ class ScaffoldExample extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
           debugPrint("Welcome: $i");
-        },
-        elevation: 100.0,
+        },*/
+        
+        elevation: 10.0,
       ),
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       body: Container(
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomButton(),
+          //  CustomButton(),
             // InkWell(
             //   child: Text(
             //     "Tap Me Fredrick!",
@@ -104,6 +131,19 @@ class ScaffoldExample extends StatelessWidget {
   }
 }
 
+int _selectedIndex = 0;
+
+void _onItemTapped(int index){
+  setState((){
+    _selectedIndex = index;
+  });
+}
+
+void setState(Null Function() param0) {
+}
+
+
+/*
 class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -129,7 +169,7 @@ class CustomButton extends StatelessWidget {
       ),
     );
   }
-}
+}*/
 
 class Home extends StatelessWidget {
   @override
