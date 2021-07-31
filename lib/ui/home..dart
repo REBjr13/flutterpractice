@@ -50,7 +50,8 @@ class ScaffoldExample extends StatelessWidget {
       ),
      
       bottomNavigationBar: BottomNavigationBar(
-        
+        backgroundColor: Colors.white,
+        elevation: 10.0,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.shifting,
@@ -89,7 +90,7 @@ class ScaffoldExample extends StatelessWidget {
         ],
 
         //iconSize: 15.0,
-        backgroundColor: Colors.white,
+
        /* onTap: (int i) {
           final snackBar = SnackBar(
             content: Text("Welcome"),
@@ -101,7 +102,7 @@ class ScaffoldExample extends StatelessWidget {
           debugPrint("Welcome: $i");
         },*/
         
-        elevation: 10.0,
+
       ),
       backgroundColor: Colors.white,
       body: Container(
