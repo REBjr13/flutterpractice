@@ -50,7 +50,7 @@ class ScaffoldExample extends StatelessWidget {
       ),
      
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white,s
         elevation: 10.0,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
