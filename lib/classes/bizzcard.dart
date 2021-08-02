@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Bizcard extends StatelessWidget {
@@ -8,34 +7,55 @@ class Bizcard extends StatelessWidget {
       appBar: AppBar(
         title: Text("Bizcard"),
         centerTitle: true,
+        toolbarOpacity: 1.0,
       ),
+      backgroundColor: Colors.greenAccent[400],
       body: Container(
         alignment: Alignment.center,
         child: Stack(
-          alignment: Alignment.center,
-          children: [
-            _getCard(),
-            _getAvatar()
-          ],
+          alignment: Alignment.topCenter,
+          children: [_getCard(), _getAvatar()],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey,
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: true,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle,),
+            label: "Info",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: "Info",
+          )
+        ],
       ),
     );
   }
-
 
   Container _getCard() {
     return Container(
       width: 400,
       height: 300,
+      margin: EdgeInsets.all(50.0),
       decoration: BoxDecoration(
-        color: Colors.deepOrange,
-        borderRadius: BorderRadius.circular(10.0)
-      ),
+          color: Colors.deepOrange, borderRadius: BorderRadius.circular(10.0)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Robert Ekine'),
-          Text('20'),
+          Text(
+            'Robert Ekine',
+            style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 20.0,
+                color: Colors.white24),
+          ),
+          Text('20',
+              style: TextStyle(
+                color: Colors.white24,
+              )),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -43,23 +63,22 @@ class Bizcard extends StatelessWidget {
               Text("Twitter & Insta: @rebjr13"),
             ],
           )
-
         ],
       ),
     );
   }
 
-  Container _getAvatar(){
+  Container _getAvatar() {
     return Container(
       width: 100,
       height: 100,
-
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(50.0),
-        border: Border.all(color: Colors.black,width: 1.0),
-        image: DecorationImage(image: null),
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(50.0),
+          border: Border.all(color: Colors.black, width: 1.0),
+          image: DecorationImage(
+              image: NetworkImage("https://picsum.photos/300/300/"),
+              fit: BoxFit.cover)),
     );
   }
 }
