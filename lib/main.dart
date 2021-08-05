@@ -7,5 +7,5 @@ import 'package:flutter_application/classes/Bible.dart';
 
 
 void main() => runApp(new MaterialApp(
-      home: Bizcard(),
+      home: ScaffoldExample(),
     ));
