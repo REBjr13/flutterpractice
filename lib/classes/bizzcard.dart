@@ -6,8 +6,14 @@ class Bizcard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Bizcard"),
-        centerTitle: true,
+        centerTitle: false,
         toolbarOpacity: 1.0,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.attachment_sharp),
+            onPressed: () => debugPrint("You"),
+          )
+        ],
       ),
       backgroundColor: Colors.greenAccent[400],
       body: Container(
@@ -23,7 +29,9 @@ class Bizcard extends StatelessWidget {
         showSelectedLabels: true,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle,),
+            icon: Icon(
+              Icons.account_circle,
+            ),
             label: "Info",
           ),
           BottomNavigationBarItem(
