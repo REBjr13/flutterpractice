@@ -10,30 +10,59 @@ class _WisdomState extends State<Wisdom> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Colors.greenAccent,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(verses[_index % verses.length]),
-            TextButton.icon(
-              onPressed: _showVerse,
-              icon: Icon(Icons.arrow_right_alt_outlined),
-              label: Text("Next"),
-            )
+            Expanded(
+              child: Container(
+                width: 500,
+                height: 200,
+                margin: EdgeInsets.all(30.0),
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(10.0)),
+                child: Center(
+                  child: Text(verses[_index % verses.length],
+                  style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontSize: 17,
+                  ),
+                  ),
+                ),
+              ),
+            ),
+            Divider(
+              thickness: 1.2,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 18.0),
+              child: TextButton.icon(
+                style: ButtonStyle(),
+                onPressed: _showVerse,
+                icon: Icon(Icons.arrow_right_alt_outlined),
+                label: Text("Next"),
+              ),
+            ),
+            Spacer(
+              flex: 1,
+            ) //to push things up
           ],
         ),
       ),
     );
   }
+
   void _showVerse() {
 //increment counter by 1
-    setState((){
+    setState(() {
       _index += 1;
 
       // if(_index == 7){
       //   _index = 0;
       //}
     });
-}
+  }
 }
 
 int _index = 0;
@@ -48,5 +77,4 @@ List verses = [
   "In all the nations, the good news has to be preached first.—Mark 13:10.",
   "Above all the things that you guard, safeguard your heart.—Prov. 4:23.",
   "As iron sharpens iron, so one man sharpens his friend.​—Prov. 27:17."
-
 ];
