@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/*
+
 class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
       ),
     );
   }
-}*/
+}
 
 class Home extends StatelessWidget {
   @override

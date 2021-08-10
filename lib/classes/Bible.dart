@@ -9,8 +9,20 @@ class _WisdomState extends State<Wisdom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+         IconButton(
+             icon: Icon(Icons.import_contacts), onPressed: () => debugPrint("print")
+         )
+        ],
+        centerTitle: true,
+        shadowColor: Colors.blueGrey,
+        backgroundColor: Colors.grey,
+        foregroundColor: Colors.blue,
+        title: Text("Bible Quotes", textAlign: TextAlign.right),
+      ),
       body: Container(
-        color: Colors.greenAccent,
+        color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -24,6 +36,7 @@ class _WisdomState extends State<Wisdom> {
                     borderRadius: BorderRadius.circular(10.0)),
                 child: Center(
                   child: Text(verses[_index % verses.length],
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontSize: 17,
@@ -33,16 +46,32 @@ class _WisdomState extends State<Wisdom> {
               ),
             ),
             Divider(
-              thickness: 1.2,
+              thickness: 1.2, //sets Horizontal divider
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 18.0),
-              child: TextButton.icon(
-                style: ButtonStyle(),
-                onPressed: _showVerse,
-                icon: Icon(Icons.arrow_right_alt_outlined),
-                label: Text("Next"),
-              ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 18.0),
+                  child: TextButton.icon(
+                    style: ButtonStyle(),
+                    onPressed: _showPreviousVerse,
+                    icon: Icon(Icons.arrow_back_outlined),
+                    label: Text("Previous"),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 18.0),
+                  child: TextButton.icon(
+                    style: ButtonStyle(),
+                    onPressed: _showVerse,
+                    icon: Icon(Icons.arrow_right_alt_outlined),
+                    label: Text("Next"),
+                  ),
+                ),
+
+
+              ],
             ),
             Spacer(
               flex: 1,
@@ -61,6 +90,12 @@ class _WisdomState extends State<Wisdom> {
       // if(_index == 7){
       //   _index = 0;
       //}
+    });
+  }
+
+  void _showPreviousVerse() {
+    setState(() {
+      _index -= 1;
     });
   }
 }
