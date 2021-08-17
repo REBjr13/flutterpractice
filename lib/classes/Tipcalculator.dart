@@ -15,6 +15,13 @@ class _TipcalcState extends State<Tipcalc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      appBar: AppBar(
+        title: Text("Tip Calculator App"),
+        centerTitle: true,
+        backgroundColor: _red1,
+
+      ),
       body: Container(
         alignment: Alignment.center,
         color: Colors.white,
