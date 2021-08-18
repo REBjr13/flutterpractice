@@ -15,12 +15,10 @@ class _TipcalcState extends State<Tipcalc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         title: Text("Tip Calculator App"),
         centerTitle: true,
         backgroundColor: _red1,
-
       ),
       body: Container(
         alignment: Alignment.center,
@@ -45,28 +43,32 @@ class _TipcalcState extends State<Tipcalc> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Total Bill: $_billAmount",
+                    Text(
+                      "Total Bill: $_billAmount",
                       style: TextStyle(
                         color: _red1.withOpacity(1.0),
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text("Total per person",
-                    style: TextStyle(
-                      color: _red1.withOpacity(1.0),
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    Text(
+                      "Total per person",
+                      style: TextStyle(
+                        color: _red1.withOpacity(1.0),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("${calculateTotalPerPerson(calculateTotalTip(_billAmount, _personCounter, _tipPercent), _billAmount, _personCounter)}",
+                      child: Text(
+                        "${calculateTotalPerPerson(calculateTotalTip(_billAmount, _personCounter, _tipPercent), _billAmount, _personCounter)}",
                         style: TextStyle(
                           color: _red1.withOpacity(1.0),
                           fontSize: 30.0,
                           fontWeight: FontWeight.normal,
-                        ),),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -78,13 +80,13 @@ class _TipcalcState extends State<Tipcalc> {
               margin: EdgeInsets.only(top: 20.0),
               padding: EdgeInsets.all(11.0),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12.0),
-                  color: Colors.transparent,
-                  border: Border.all(
-                    width: 0.5,
-                    color: Colors.blueGrey.shade100,
-                    style: BorderStyle.solid,
-                  ),
+                borderRadius: BorderRadius.circular(12.0),
+                color: Colors.transparent,
+                border: Border.all(
+                  width: 0.5,
+                  color: Colors.blueGrey.shade100,
+                  style: BorderStyle.solid,
+                ),
               ),
               child: Column(
                 children: [
@@ -109,7 +111,6 @@ class _TipcalcState extends State<Tipcalc> {
                       }
                     },
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -225,7 +226,7 @@ class _TipcalcState extends State<Tipcalc> {
                         ),
                       ),
                       Slider(
-                        min: 0,
+                          min: 0,
                           max: 100,
                           divisions: 10,
                           activeColor: _red1,
@@ -265,17 +266,16 @@ class _TipcalcState extends State<Tipcalc> {
     );
   }
 
-  calculateTotalPerPerson(double totalTip, double billAmount, int splitBy){
+  calculateTotalPerPerson(double totalTip, double billAmount, int splitBy) {
     var totalPerPerson = (totalTip + billAmount) / splitBy;
     return totalPerPerson.toStringAsFixed(2);
   }
 
-  calculateTotalTip(double billAmount,int splitBy, int tipPercent){
+  calculateTotalTip(double billAmount, int splitBy, int tipPercent) {
     double totalTip = 0.0;
 
-    if(billAmount < 0 || billAmount.toString().isEmpty || billAmount == null){
-
-    }else{
+    if (billAmount < 0 || billAmount.toString().isEmpty || billAmount == null) {
+    } else {
       totalTip = (billAmount * tipPercent) / 100;
     }
     return totalTip;
