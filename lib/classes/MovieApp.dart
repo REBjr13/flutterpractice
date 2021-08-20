@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/classes/page.dart';
 
 class Movie extends StatelessWidget {
   final List anime = [
@@ -13,7 +14,6 @@ class Movie extends StatelessWidget {
     'Gintama',
     'Bleach',
     'Mob Psyhco'
-
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,17 +30,24 @@ class Movie extends StatelessWidget {
                 elevation: 5.0,
                 color: Colors.white,
                 child: ListTile(
-                  title: Text(anime[index]),
-                  subtitle: Text('Sub'),
-                  trailing: Text('Text'),
-                  leading: CircleAvatar(
-                    backgroundColor: Colors.black,
-                    child: Text(
-                      'R'
-                    ),
-                  )
-                ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute( //To move to another page
+                              builder: (context) => MovieListDetails()));
+                    },
+                    // onTap: ()=> {
+                    //   debugPrint('${anime.elementAt(index)}'),
+                    // },
+                    title: Text(anime[index]),
+                    subtitle: Text('Sub'),
+                    trailing: Text('Text'),
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.black,
+                      child: Text('R'),
+                    )),
               );
             }));
   }
 }
+
