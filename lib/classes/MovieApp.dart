@@ -15,6 +15,7 @@ class Movie extends StatelessWidget {
     'Bleach',
     'Mob Psyhco'
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +33,13 @@ class Movie extends StatelessWidget {
                 child: ListTile(
                     onTap: () {
                       Navigator.push(
+                          //push adds to stack
                           context,
-                          MaterialPageRoute( //To move to another page
-                              builder: (context) => MovieListDetails()));
+                          MaterialPageRoute(
+                              //To move to another page
+                              builder: (context) => MovieListDetails(
+                                    movieName: anime[index],
+                                  )));
                     },
                     // onTap: ()=> {
                     //   debugPrint('${anime.elementAt(index)}'),
@@ -50,4 +55,3 @@ class Movie extends StatelessWidget {
             }));
   }
 }
-
