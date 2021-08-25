@@ -18,11 +18,11 @@ class _TipcalcState extends State<Tipcalc> {
       appBar: AppBar(
         title: Text("Tip Calculator App"),
         centerTitle: true,
-        backgroundColor: _red1,
+        //backgroundColor: _red1,
       ),
       body: Container(
         alignment: Alignment.center,
-        color: Colors.white,
+       // color: Colors.white,
         margin: EdgeInsets.only(
             top: MediaQuery.of(context).size.height *
                 0.1), //sets margin to be auto for any device
@@ -36,7 +36,7 @@ class _TipcalcState extends State<Tipcalc> {
               width: 150,
               height: 200,
               decoration: BoxDecoration(
-                color: _red1.withOpacity(0.5),
+                //color: _red1.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(12.0),
               ),
               child: Center(
@@ -46,7 +46,7 @@ class _TipcalcState extends State<Tipcalc> {
                     Text(
                       "Total Bill: $_billAmount",
                       style: TextStyle(
-                        color: _red1.withOpacity(1.0),
+                       // color: _red1.withOpacity(1.0),
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -54,7 +54,7 @@ class _TipcalcState extends State<Tipcalc> {
                     Text(
                       "Total per person",
                       style: TextStyle(
-                        color: _red1.withOpacity(1.0),
+                       // color: _red1.withOpacity(1.0),
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -64,7 +64,7 @@ class _TipcalcState extends State<Tipcalc> {
                       child: Text(
                         "${calculateTotalPerPerson(calculateTotalTip(_billAmount, _personCounter, _tipPercent), _billAmount, _personCounter)}",
                         style: TextStyle(
-                          color: _red1.withOpacity(1.0),
+                          //color: _red1.withOpacity(1.0),
                           fontSize: 30.0,
                           fontWeight: FontWeight.normal,
                         ),
@@ -81,7 +81,7 @@ class _TipcalcState extends State<Tipcalc> {
               padding: EdgeInsets.all(11.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12.0),
-                color: Colors.transparent,
+                //color: Colors.transparent,
                 border: Border.all(
                   width: 0.5,
                   color: Colors.blueGrey.shade100,
@@ -94,13 +94,15 @@ class _TipcalcState extends State<Tipcalc> {
                     keyboardType: TextInputType.numberWithOptions(
                       decimal: true,
                     ),
-                    style: TextStyle(color: Colors.pinkAccent.shade100),
+                    style: TextStyle(
+                       // color: Colors.pinkAccent.shade100
+                    ),
                     decoration: InputDecoration(
                       isCollapsed: true,
                       prefixText: "BillAmount",
                       prefixIcon: Icon(
                         Icons.list_alt,
-                        color: Colors.grey,
+                       // color: Colors.grey,
                       ),
                     ),
                     onChanged: (String value) {
@@ -117,7 +119,7 @@ class _TipcalcState extends State<Tipcalc> {
                       Text(
                         "Split",
                         style: TextStyle(
-                          color: Colors.grey.shade500,
+                         // color: Colors.grey.shade500,
                         ),
                       ),
                       Row(

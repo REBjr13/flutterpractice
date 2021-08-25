@@ -29,10 +29,10 @@ class _QuizState extends State<Quiz> {
       appBar: AppBar(
         title: Text("Quiz App", style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
-        backgroundColor: blue1,
-        shadowColor: Colors.grey,
+        //backgroundColor: blue1,
+       //shadowColor: Colors.grey,
       ),
-      backgroundColor: Colors.blueGrey,
+      //backgroundColor: Colors.blueGrey,
       body: Container(
         margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.3),
         child: Center(
@@ -57,10 +57,12 @@ class _QuizState extends State<Quiz> {
                       child: Text(
                           questions[_currentQuestionIndex % questions.length]
                               .questionText,
-                          style: TextStyle(
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
+                          // style: TextStyle(
+                          //     fontSize: 17.0,
+                          //     fontWeight: FontWeight.bold,
+                          //     color: Colors.white
+                          // )),
+                      ),
                     ),
                   ),
                 ),
@@ -85,7 +87,7 @@ class _QuizState extends State<Quiz> {
                   ),
                   ElevatedButton(
                     onPressed: () => _nextQuestion(),
-                    // color: Colors.blue,
+                    // color: Colors.black,
                     child: Icon(Icons.arrow_forward),
                   ),
                 ],

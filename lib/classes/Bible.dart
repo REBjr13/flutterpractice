@@ -16,13 +16,13 @@ class _WisdomState extends State<Wisdom> {
          )
         ],
         centerTitle: true,
-        shadowColor: Colors.blueGrey,
-        backgroundColor: Colors.grey,
-        foregroundColor: Colors.blue,
+        // shadowColor: Colors.blueGrey,
+        // backgroundColor: Colors.grey,
+        // foregroundColor: Colors.blue,
         title: Text("Bible Quotes", textAlign: TextAlign.right),
       ),
       body: Container(
-        color: Colors.white,
+       // color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -32,7 +32,7 @@ class _WisdomState extends State<Wisdom> {
                 height: 200,
                 margin: EdgeInsets.all(30.0),
                 decoration: BoxDecoration(
-                    color: Colors.grey,
+                  //  color: Colors.grey,
                     borderRadius: BorderRadius.circular(10.0)),
                 child: Center(
                   child: Text(verses[_index % verses.length],
