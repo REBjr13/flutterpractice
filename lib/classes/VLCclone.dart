@@ -37,11 +37,11 @@ class _State extends State<ScaffoldExample> {
               onPressed: () => debugPrint("account button tapped")),
         ],
         centerTitle: false,
-        backgroundColor: Colors.white,
+        //backgroundColor: Colors.white,
         elevation: 0.0,
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepOrangeAccent[200],
+        //backgroundColor: Colors.deepOrangeAccent[200],
         child: Icon(
           Icons.play_arrow,
           size: 40.0,
@@ -49,14 +49,14 @@ class _State extends State<ScaffoldExample> {
         onPressed: () {
           final snackBar = SnackBar(
             content: Text("Floating Action!"),
-            backgroundColor: Colors.blue,
+           // backgroundColor: Colors.blue,
           );
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+     //   backgroundColor: Colors.white,
         elevation: 10.0,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
