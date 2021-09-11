@@ -1,14 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application/ui/util/hexcolor.dart';
-import 'package:flutter_application/classes/MovieApp.dart';
-import 'package:flutter_application/classes/QuizApp.dart';
-import 'package:flutter_application/ui/home.dart';
-import 'package:flutter_application/classes/VLCclone.dart';
-import 'package:flutter_application/classes/bizzcard.dart';
-import 'package:flutter_application/classes/Bible.dart';
-import 'package:flutter_application/classes/Tipcalculator.dart';
-import 'package:flutter_application/classes/mortgage_app.dart';
+import 'package:flutter_application/json_parsing/json_parsing.dart';
 
 final ThemeData _appTheme = _buildAppTheme(); //creating a theme function
 
@@ -47,6 +39,9 @@ BottomNavigationBarThemeData _appNav(BottomNavigationBarThemeData base) {
 
 AppBarTheme _appBar(AppBarTheme base) {
   return base.copyWith(
+    titleTextStyle: TextStyle(
+      fontFamily: "HinaMincho",
+    ),
     backgroundColor: Colors.blueGrey,
   );
 }
@@ -95,7 +90,7 @@ TextTheme _appTextTheme(TextTheme base) {
       )
       .apply(
         // overides the properties for all options
-        fontFamily: "RobotoCondensed",
+        fontFamily: "HinaMincho",
         //displayColor: Colors.black,
       );
 }
@@ -123,5 +118,5 @@ void main() => runApp(new MaterialApp(
       //
       // ),
       debugShowCheckedModeBanner: false,
-      home: MortgageApp(),
+      home: JsonParsingSimple(),
     ));
