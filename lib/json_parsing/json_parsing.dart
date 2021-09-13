@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
@@ -22,23 +24,21 @@ class _JsonParsingSimpleState extends State<JsonParsingSimple> {
         appBar: AppBar(
           title: Text('Parsing JSON'),
         ),
-        body: Container(
-          child: ListView(
-            children: [
-              Center(child: Text("Robert")),
-            ],
-          ),
-        ),
+        body: Center(
+            child: Text(
+          'Robert',
+        )),
       ),
     );
   }
 
   Future getData() async {
-    var data;
-    var url = "https//jsonplaceholder.typeicode.com/posts";
+    Future data;
+    String url = "https://jsonplaceholder.typicode.com/posts";
     Network network = Network(url);
 
     data = network.fetchData();
+    print(data);
 
     return data;
   }
@@ -51,11 +51,12 @@ class Network {
 
   Future fetchData() async {
     print("$url");
-    Response response = await get(Uri.encodeFull(url));
+    Response response = await get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       //Ok
-      print(response.body);
+      print(response.body[0]);
+
       return response.body;
     } else {
       print(response.statusCode);
