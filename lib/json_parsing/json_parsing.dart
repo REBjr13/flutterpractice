@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'json_parsing_map.dart';
 
 class JsonParsingSimple extends StatefulWidget {
   @override
@@ -25,9 +26,15 @@ class _JsonParsingSimpleState extends State<JsonParsingSimple> {
           title: Text('Parsing JSON'),
         ),
         body: Center(
-            child: Text(
-          'Robert',
-        )),
+            child: Container(
+                child: FutureBuilder(
+                    future: getData(),
+                    builder: (context, AsyncSnapshot snapshot) {
+                      if (snapshot.hasData) {
+                        return createListView(snapshot.data, context);
+                      }
+                      return CircularProgressIndicator();
+                    }))),
       ),
     );
   }
@@ -38,28 +45,57 @@ class _JsonParsingSimpleState extends State<JsonParsingSimple> {
     Network network = Network(url);
 
     data = network.fetchData();
-    print(data);
+    // data.then((value)
+    // {
+    //   print(value );
+    // });
 
     return data;
   }
 }
 
-class Network {
-  final String url;
+Widget createListView(List data, BuildContext context){
+  return Container(
+    child: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, int index){
 
-  Network(this.url);
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Divider(height: 1),
+          ListTile(
+            title: Text("${data[index]["body"]}"),
+            trailing: Text("${data[index]['id']}"),
+            //subtitle: Text('${data[index][["body"]]}'),
+            leading: Column(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.black12,
+                  radius: 23.0,
+                  child: Text('${data[index]['id']}')
 
-  Future fetchData() async {
-    print("$url");
-    Response response = await get(Uri.parse(url));
-
-    if (response.statusCode == 200) {
-      //Ok
-      print(response.body[0]);
-
-      return response.body;
-    } else {
-      print(response.statusCode);
+                )
+              ],
+            ),
+          )
+        ],
+      );
     }
+
+      ),
+  );
+}
+
+Future fetchData() async {
+  print("$url");
+  Response response = await get(Uri.parse(url));
+
+  if (response.statusCode == 200) {
+    //Ok
+    // print(response.body);
+    return json.decode(response.body);
+  } else {
+    print(response.statusCode);
   }
 }

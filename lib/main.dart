@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application/json_parsing/json_parsing.dart';
+//import 'package:flutter_application/json_parsing/json_parsing.dart';
+import 'package:flutter_application/json_parsing/json_parsing_map.dart';
 
 final ThemeData _appTheme = _buildAppTheme(); //creating a theme function
 
@@ -97,26 +98,6 @@ TextTheme _appTextTheme(TextTheme base) {
 
 void main() => runApp(new MaterialApp(
       theme: _buildAppTheme(),
-
-      // theme: ThemeData(
-      //     brightness: Brightness.dark,
-      //   primaryColor: Colors.lightGreen[300],
-      //
-      //   textTheme: TextTheme(
-      //     button: TextStyle(
-      //       fontSize: 20,
-      //       fontWeight: FontWeight.bold,
-      //     ),
-      //
-      //     bodyText2: TextStyle(
-      //       fontSize: 24.5,
-      //       color: Colors.teal,
-      //       fontWeight: FontWeight.bold,
-      //
-      //     ),
-      //   ),
-      //
-      // ),
       debugShowCheckedModeBanner: false,
-      home: JsonParsingSimple(),
+      home: JsonParsingMap(),
     ));
