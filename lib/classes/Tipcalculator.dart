@@ -7,6 +7,7 @@ class Tipcalc extends StatefulWidget {
 }
 
 class _TipcalcState extends State<Tipcalc> {
+  //some initial variables
   int _tipPercent = 0;
   int _personCounter = 1;
   double _billAmount = 0.0;
@@ -22,7 +23,7 @@ class _TipcalcState extends State<Tipcalc> {
       ),
       body: Container(
         alignment: Alignment.center,
-       // color: Colors.white,
+        // color: Colors.white,
         margin: EdgeInsets.only(
             top: MediaQuery.of(context).size.height *
                 0.1), //sets margin to be auto for any device
@@ -36,6 +37,10 @@ class _TipcalcState extends State<Tipcalc> {
               width: 150,
               height: 200,
               decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.deepPurpleAccent.withOpacity(0.5),
+                  style: BorderStyle.solid,
+                ),
                 //color: _red1.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(12.0),
               ),
@@ -46,7 +51,7 @@ class _TipcalcState extends State<Tipcalc> {
                     Text(
                       "Total Bill: $_billAmount",
                       style: TextStyle(
-                       // color: _red1.withOpacity(1.0),
+                        // color: _red1.withOpacity(1.0),
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -54,7 +59,7 @@ class _TipcalcState extends State<Tipcalc> {
                     Text(
                       "Total per person",
                       style: TextStyle(
-                       // color: _red1.withOpacity(1.0),
+                        // color: _red1.withOpacity(1.0),
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -62,7 +67,9 @@ class _TipcalcState extends State<Tipcalc> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "${calculateTotalPerPerson(calculateTotalTip(_billAmount, _personCounter, _tipPercent), _billAmount, _personCounter)}",
+                        "${calculateTotalPerPerson(calculateTotalTip(_billAmount,
+                            _personCounter, _tipPercent),
+                            _billAmount, _personCounter)}",
                         style: TextStyle(
                           //color: _red1.withOpacity(1.0),
                           fontSize: 30.0,
@@ -84,7 +91,7 @@ class _TipcalcState extends State<Tipcalc> {
                 //color: Colors.transparent,
                 border: Border.all(
                   width: 0.5,
-                  color: Colors.blueGrey.shade100,
+                  color: Colors.deepPurpleAccent.withOpacity(0.5),
                   style: BorderStyle.solid,
                 ),
               ),
@@ -95,14 +102,14 @@ class _TipcalcState extends State<Tipcalc> {
                       decimal: true,
                     ),
                     style: TextStyle(
-                       // color: Colors.pinkAccent.shade100
-                    ),
+                        color: Colors.blueGrey,
+                        ),
                     decoration: InputDecoration(
                       isCollapsed: true,
-                      prefixText: "BillAmount",
+                      hintText: "Input BillAmount",
                       prefixIcon: Icon(
                         Icons.list_alt,
-                       // color: Colors.grey,
+                         color: Colors.deepPurpleAccent.withOpacity(0.5),
                       ),
                     ),
                     onChanged: (String value) {
@@ -119,12 +126,13 @@ class _TipcalcState extends State<Tipcalc> {
                       Text(
                         "Split",
                         style: TextStyle(
-                         // color: Colors.grey.shade500,
-                        ),
+                             color: Colors.blueGrey,
+                            ),
                       ),
                       Row(
                         children: [
                           InkWell(
+                            //code of people reduction
                             onTap: () {
                               setState(() {
                                 if (_personCounter > 1) {
@@ -140,13 +148,13 @@ class _TipcalcState extends State<Tipcalc> {
                               margin: EdgeInsets.all(10.0),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(6.0),
-                                color: _red1.withOpacity(0.2),
+                                color:Colors.deepPurpleAccent.withOpacity(0.5),
                               ),
                               child: Center(
                                   child: Text(
                                 "-",
                                 style: TextStyle(
-                                  color: _red1.withOpacity(1.0),
+                                  color: Colors.blueGrey.withOpacity(1.0),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17.0,
                                 ),
@@ -154,14 +162,15 @@ class _TipcalcState extends State<Tipcalc> {
                             ),
                           ),
                           Text(
-                            "$_personCounter",
+                            "$_personCounter", //code for total persons
                             style: TextStyle(
-                              color: _red1.withOpacity(1.0),
+                              color: Colors.blueGrey.withOpacity(1.0),
                               fontWeight: FontWeight.bold,
                               fontSize: 17.0,
                             ),
                           ),
                           InkWell(
+                            //code of people increment
                             onTap: () {
                               setState(() {
                                 _personCounter++;
@@ -173,13 +182,13 @@ class _TipcalcState extends State<Tipcalc> {
                               margin: EdgeInsets.all(10.0),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(6.0),
-                                color: _red1.withOpacity(0.2),
+                                color: Colors.deepPurpleAccent.withOpacity(0.5),
                               ),
                               child: Center(
                                 child: Text(
                                   "+",
                                   style: TextStyle(
-                                    color: _red1.withOpacity(1.0),
+                                    color: Colors.blueGrey.withOpacity(1.0),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 17.0,
                                   ),
@@ -198,7 +207,7 @@ class _TipcalcState extends State<Tipcalc> {
                         child: Text(
                           "Tip",
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: Colors.blueGrey,
                           ),
                         ),
                       ),
@@ -208,7 +217,7 @@ class _TipcalcState extends State<Tipcalc> {
                           child: Text(
                             "\$ ${calculateTotalTip(_billAmount, _personCounter, _tipPercent)}",
                             style: TextStyle(
-                              color: _red1.withOpacity(1.0),
+                              color: Colors.blueGrey.withOpacity(1.0),
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
                             ),
@@ -228,11 +237,12 @@ class _TipcalcState extends State<Tipcalc> {
                         ),
                       ),
                       Slider(
+                          //code of slider bar
                           min: 0,
                           max: 100,
                           divisions: 10,
-                          activeColor: _red1,
-                          inactiveColor: Colors.grey,
+                          activeColor: Colors.deepPurpleAccent.withOpacity(0.5),
+                          inactiveColor: Colors.blueGrey,
                           value: _tipPercent.toDouble(),
                           onChanged: (double newValue) {
                             setState(() {
@@ -246,24 +256,6 @@ class _TipcalcState extends State<Tipcalc> {
             )
           ],
         ),
-
-        // child: Container(
-        //   width: 500,
-        //   height: 200,
-        //   margin: EdgeInsets.all(30.0),
-        //   decoration: BoxDecoration(
-        //       color: Colors.grey,
-        //       borderRadius: BorderRadius.circular(10.0)),
-        //   child: Center(
-        //     child: Text("Hello There",
-        //       textAlign: TextAlign.center,
-        //       style: TextStyle(
-        //         fontStyle: FontStyle.italic,
-        //         fontSize: 17,
-        //       ),
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }
@@ -271,7 +263,7 @@ class _TipcalcState extends State<Tipcalc> {
   calculateTotalPerPerson(double totalTip, double billAmount, int splitBy) {
     var totalPerPerson = (totalTip + billAmount) / splitBy;
     return totalPerPerson.toStringAsFixed(2);
-  }
+  } //code for calculating total tip per person
 
   calculateTotalTip(double billAmount, int splitBy, int tipPercent) {
     double totalTip = 0.0;
@@ -279,7 +271,7 @@ class _TipcalcState extends State<Tipcalc> {
     if (billAmount < 0 || billAmount.toString().isEmpty || billAmount == null) {
     } else {
       totalTip = (billAmount * tipPercent) / 100;
-    }
+    } //code for calculating total tip
     return totalTip;
   }
 }
