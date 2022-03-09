@@ -4,7 +4,7 @@ import 'package:flutter_application/classes/page.dart';
 class Movie extends StatelessWidget {
   final List anime = [
     'One Piece',
-    'Idaten',
+    'Idaten  Deities know only peace',
     'Boku no Hero',
     'Naruto',
     'Black Clover',
