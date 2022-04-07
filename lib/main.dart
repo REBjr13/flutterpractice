@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/classes/MovieApp.dart';
-import 'package:flutter_application/classes/Bible.dart';
 import 'ui/util/hexcolor.dart';
 
 Color primaryPurple = HexColor("#7e57c2");
@@ -11,8 +10,8 @@ Color secondaryBlue = HexColor("#42a5f5");
 Color lightBlue = HexColor("#80d6ff");
 Color darkBlue = HexColor("#4d2c91");
 
-Color primaryText = HexColor("#ffffff");
-Color secText = HexColor("#000000");
+Color primaryText = HexColor("#000000");
+Color secText = HexColor("#ffffff");
 
 final ThemeData _appTheme = _buildAppTheme(); //creating a theme function
 
@@ -21,13 +20,16 @@ ThemeData _buildAppTheme() {
   return base.copyWith(
     inputDecorationTheme: _input(base.inputDecorationTheme),
     brightness: Brightness.dark,
-    primaryColor: Colors.deepPurple,
-    hintColor: Colors.grey,
+    primaryColor: Color.fromARGB(255, 45, 42, 140),
+    hintColor: Color.fromARGB(255, 107, 164, 153),
     scaffoldBackgroundColor: Colors.white,
     backgroundColor: Colors.lightGreen,
     textTheme: _appTextTheme(base.textTheme),
     appBarTheme: _appBar(base.appBarTheme),
-    bottomNavigationBarTheme: _appNav(base.bottomNavigationBarTheme), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: secondaryBlue).copyWith(secondary: Colors.blueAccent),
+    bottomNavigationBarTheme: _appNav(base.bottomNavigationBarTheme),
+    colorScheme: ColorScheme.fromSwatch()
+        .copyWith(secondary: secondaryBlue)
+        .copyWith(secondary: Colors.blueAccent),
   );
 }
 
@@ -60,7 +62,6 @@ TextTheme _appTextTheme(TextTheme base) {
         headline1: base.headline5.copyWith(
           fontWeight: FontWeight.w300,
         ),
-
         headline6: base.headline5
             .copyWith(fontWeight: FontWeight.w100, fontSize: 20.0),
         bodyText2: TextStyle(
@@ -78,8 +79,7 @@ TextTheme _appTextTheme(TextTheme base) {
 
 void main() {
   runApp(new MaterialApp(
-    theme: _buildAppTheme(),
-    debugShowCheckedModeBanner: false,
-    home: Wisdom()
-  ));
+      theme: _buildAppTheme(),
+      debugShowCheckedModeBanner: false,
+      home: Movie()));
 }

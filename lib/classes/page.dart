@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../model/movie.dart';
+import 'MovieApp.dart';
+
 //a route(page)
 class MovieListDetails extends StatelessWidget {
-
   final String movieName;
+  final Movies movie;
 
-  const MovieListDetails({Key key, this.movieName}) : super(key: key);
+  const MovieListDetails({Key key, this.movieName, this.movie}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class MovieListDetails extends StatelessWidget {
       body: Center(
         child: Container(
           child: ElevatedButton(
-            child: Text(this.movieName),
+            child: Text(this.movie.rated),
             onPressed: () {
               Navigator.pop(context); //pop removes from stack
             },
