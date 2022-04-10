@@ -30,7 +30,7 @@ class Movie extends StatelessWidget {
             title: Text('Movie App', style: TextStyle(color: Colors.white)),
             centerTitle: true,
             backgroundColor: Colors.blueGrey.shade900),
-        backgroundColor: Colors.blueGrey.shade400,
+        backgroundColor: Colors.blueGrey.shade900,
         body: ListView.builder(
             itemCount: movieList.length,
             itemBuilder: (BuildContext context, int index) {
@@ -94,23 +94,27 @@ class Movie extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(movie.title,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        color: Colors.white,
-                      ),),
-                      Text("Rating: ${movie.imdbRatings} / 10", style: TextStyle(
-                        fontSize: 17, color: Colors.grey
-                      ),)
+                      Flexible(
+                        child: Text(
+                          movie.title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Text("Rating: ${movie.imdbRatings} / 10",
+                          style: mainTextStyle())
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text("Released: ${movie.released}"),
-                      Text("${movie.runtime}"),
-                      Text("${movie.rated}")
+                      Text("Released: ${movie.released}",
+                          style: mainTextStyle()),
+                      Text("${movie.runtime}", style: mainTextStyle()),
+                      Text("${movie.rated}", style: mainTextStyle())
                     ],
                   )
                 ],
@@ -128,6 +132,13 @@ class Movie extends StatelessWidget {
                       movie: movie,
                     )));
       },
+    );
+  }
+
+  TextStyle mainTextStyle() {
+    return TextStyle(
+      fontSize: 15,
+      color: Colors.grey,
     );
   }
 

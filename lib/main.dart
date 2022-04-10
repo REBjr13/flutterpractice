@@ -70,11 +70,11 @@ TextTheme _appTextTheme(TextTheme base) {
           //fontStyle: FontStyle.italic,
           fontSize: 15.0,
         ),
-      )
-      .apply(
-        // overides the properties for all options
-        fontFamily: "HinaMincho",
       );
+      // .apply(
+      //   // overides the properties for all options
+      //   fontFamily: "HinaMincho",
+      // );
 }
 
 void main() {
