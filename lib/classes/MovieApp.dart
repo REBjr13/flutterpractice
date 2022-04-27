@@ -1,27 +1,24 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application/classes/page.dart';
-
-import 'package:flutter_application/model/movie.dart';
+import '../model/movie.dart';
 
 class Movie extends StatelessWidget {
   final List<Movies> movieList = Movies.getMovies();
 
-  final List anime = [
-    'One Piece',
-    'Idaten Deities know only peace',
-    'Boku no Hero',
-    'Naruto',
-    'Black Clover',
-    'Nanatsu no Taizai',
-    'One Punch Man',
-    'Dragon Ball',
-    'Gintama',
-    'Bleach',
-    'Mob Psyhco',
-    'Cells at work'
-  ];
+  // final List anime = [
+  //   'One Piece',
+  //   'Idaten Deities know only peace',
+  //   'Boku no Hero',
+  //   'Naruto',
+  //   'Black Clover',
+  //   'Nanatsu no Taizai',
+  //   'One Punch Man',
+  //   'Dragon Ball',
+  //   'Gintama',
+  //   'Bleach',
+  //   'Mob Psyhco',
+  //   'Cells at work'
+  // ];
 
   @override
   Widget build(BuildContext context) {
