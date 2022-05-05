@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/classes/MovieApp.dart';
-import 'ui/util/hexcolor.dart';
+import 'package:flutter_application/ui/movie_ui/MovieApp.dart';
 
 void main() {
   runApp(new MaterialApp(

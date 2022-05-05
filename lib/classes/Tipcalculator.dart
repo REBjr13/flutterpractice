@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/ui/util/hexcolor.dart';
 
 class Tipcalc extends StatefulWidget {
   @override
@@ -11,7 +10,7 @@ class _TipcalcState extends State<Tipcalc> {
   int _tipPercent = 0;
   int _personCounter = 1;
   double _billAmount = 0.0;
-  Color _red1 = HexColor("6625B1FF");
+
 
   @override
   Widget build(BuildContext context) {

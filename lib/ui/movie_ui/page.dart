@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/movie.dart';
+import 'package:flutter_application/model/movie.dart';
 
 //a route(page)
 class MovieListDetails extends StatelessWidget {
@@ -24,7 +24,8 @@ class MovieListDetails extends StatelessWidget {
           MovieDetailsHeaderWithPoster(movie: movie),
           HorizontalLine(),
           MovieDetailsCast(movie: movie),
-          HorizontalLine()
+          HorizontalLine(),
+          MovieDetailsExtraPoster(posters: movie.images)
         ],
       ),
       // body: Center(
@@ -56,7 +57,7 @@ class MovieDetailsThumbnail extends StatelessWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 300,
+              height: 250,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(thumbnail), fit: BoxFit.cover)),
@@ -220,5 +221,41 @@ class HorizontalLine extends StatelessWidget {
         color: Colors.black,
       ),
     );
+  }
+}
+
+class MovieDetailsExtraPoster extends StatelessWidget {
+  final List posters;
+  const MovieDetailsExtraPoster({Key key, this.posters}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Center(
+        child: Text("More Movie pics".toUpperCase(),
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.black,
+            )),
+      ),
+      Container(
+          height: 180,
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            separatorBuilder: (context, index) => SizedBox(width: 8.0),
+            itemCount: posters.length,
+            itemBuilder: (context, index) => ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                child: Container(
+                    width: MediaQuery.of(context).size.width / 4,
+                    height: 150,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image: NetworkImage(posters[index]),
+                      fit: BoxFit.cover,
+                    )))),
+          ))
+    ]);
   }
 }

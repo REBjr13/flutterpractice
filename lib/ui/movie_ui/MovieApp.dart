@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/classes/page.dart';
-import '../model/movie.dart';
+import 'package:flutter_application/model/movie.dart';
+import 'package:flutter_application/ui/movie_ui/page.dart';
 
 class Movie extends StatelessWidget {
   final List<Movies> movieList = Movies.getMovies();
@@ -150,4 +150,3 @@ class Movie extends StatelessWidget {
     );
   }
 }
-
