@@ -150,3 +150,4 @@ class Movie extends StatelessWidget {
     );
   }
 }
+

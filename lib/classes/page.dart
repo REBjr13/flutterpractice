@@ -22,7 +22,9 @@ class MovieListDetails extends StatelessWidget {
         children: [
           MovieDetailsThumbnail(thumbnail: movie.images[2]),
           MovieDetailsHeaderWithPoster(movie: movie),
-          MovieDetailsCast(movie: movie,)
+          HorizontalLine(),
+          MovieDetailsCast(movie: movie),
+          HorizontalLine()
         ],
       ),
       // body: Center(
@@ -188,7 +190,6 @@ class MovieField extends StatelessWidget {
 
   const MovieField({Key key, this.field, this.value}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -205,6 +206,19 @@ class MovieField extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+class HorizontalLine extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+      child: Container(
+        height: 0.5,
+        color: Colors.black,
+      ),
     );
   }
 }
