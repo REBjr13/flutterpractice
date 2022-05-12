@@ -27,12 +27,13 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Quiz App",
-            //style: TextStyle(fontWeight: FontWeight.bold)
+        title: Text(
+          "Quiz App",
+          //style: TextStyle(fontWeight: FontWeight.bold)
         ),
         centerTitle: true,
         //backgroundColor: blue1,
-       //shadowColor: Colors.grey,
+        //shadowColor: Colors.grey,
       ),
       //backgroundColor: Colors.blueGrey,
       body: Container(
@@ -57,13 +58,8 @@ class _QuizState extends State<Quiz> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                          questions[_currentQuestionIndex % questions.length]
-                              .questionText,
-                          // style: TextStyle(
-                          //     fontSize: 17.0,
-                          //     fontWeight: FontWeight.bold,
-                          //     color: Colors.white
-                          // )),
+                        questions[_currentQuestionIndex % questions.length]
+                            .questionText,
                       ),
                     ),
                   ),
@@ -109,7 +105,7 @@ class _QuizState extends State<Quiz> {
       final snackBar = SnackBar(
         elevation: 10.0,
         content: Text(
-          "True",
+          "correct",
           style: TextStyle(color: Colors.black54),
         ),
         duration: Duration(milliseconds: 500),
@@ -123,7 +119,7 @@ class _QuizState extends State<Quiz> {
       final snackBar = SnackBar(
         elevation: 10.0,
         duration: Duration(milliseconds: 500),
-        content: Text("False"),
+        content: Text("wrong"),
         backgroundColor: Colors.blue,
       );
 
@@ -150,4 +146,3 @@ class _QuizState extends State<Quiz> {
     });
   }
 }
-
