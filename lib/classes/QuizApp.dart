@@ -26,11 +26,8 @@ class _QuizState extends State<Quiz> {
       appBar: AppBar(
         title: Text(
           "Quiz App",
-          // style: TextStyle(fontWeight: FontWeight.bold)
         ),
         centerTitle: true,
-        //backgroundColor: blue1,
-        //shadowColor: Colors.grey,
       ),
       //backgroundColor: Colors.blueGrey,
       body: Container(
@@ -46,7 +43,7 @@ class _QuizState extends State<Quiz> {
                     color: Colors.transparent,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: Colors.lightGreen.shade400,
+                      color: Colors.lightBlue,
                       style: BorderStyle.solid,
                     ),
                   ),

@@ -62,16 +62,21 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: HinaMincho
-       fonts:
-          - asset: font/HinaMincho-Regular.ttf
+    - family: HinaMincho
+      fonts:
+        - asset: font/HinaMincho-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-     - family: RobotoCondensed
-       fonts:
-         - asset: font/RobotoCondensed-Bold.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #        weight: 700
+    - family: RobotoCondensed
+      fonts:
+  #      - asset: font/RobotoCondensed-Bold.ttf
+  #      - asset: font/RobotoCondensed-BoldItalic.ttf
+  #      - asset: font/RobotoCondensed-Italic.ttf
+  #      - asset: font/RobotoCondensed-Light.ttf
+        - asset: font/RobotoCondensed-Regular.ttf
+    - family: Allison
+      fonts:
+        - asset: font/Allison-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

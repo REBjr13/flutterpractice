@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:flutter_application/classes/QuizApp.dart';
 
 // ignore: unused_import
@@ -18,20 +19,29 @@ ThemeData _buildTheme() {
 }
 
 TextTheme _appTextTheme(TextTheme base) {
-  return base.copyWith(
-      headline1: base.headline1.copyWith(
-        fontWeight: FontWeight.w600,
-      ),
-      bodyText2: base.bodyText1.copyWith(
-        fontWeight: FontWeight.bold,
-        fontSize: 17,
-        color: Colors.black38,
-        letterSpacing: 1.0,
-      ),
-      button: base.button.copyWith(
-        fontSize: 14,
-        letterSpacing: 3.0,
-      ));
+  return base
+      .copyWith(
+        headline1: base.headline1.copyWith(
+          fontWeight: FontWeight.w600,
+        ),
+        bodyText2: base.bodyText1.copyWith(
+          fontWeight: FontWeight.bold,
+          fontSize: 17,
+          color: Colors.black38,
+          letterSpacing: 1.0,
+          fontFamily: "HinaMincho",
+        ),
+        button: base.button.copyWith(
+          fontSize: 14,
+          letterSpacing: 3.0,
+          fontFamily: "RobotoCondensed",
+        ),
+      )
+      .apply(
+        fontFamily: "RobotoCondensed",
+        displayColor: Colors.amber,
+        bodyColor: Colors.white70,
+      ); //overwrites everything in base.copyWith
 }
 
 void main() => runApp(new MaterialApp(
