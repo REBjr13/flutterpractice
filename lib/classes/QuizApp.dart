@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/model/question.dart';
-import 'package:flutter_application/ui/util/hexcolor.dart';
-
-Color blue1 = HexColor("#345867");
 
 class Quiz extends StatefulWidget {
   @override
@@ -29,7 +26,7 @@ class _QuizState extends State<Quiz> {
       appBar: AppBar(
         title: Text(
           "Quiz App",
-          //style: TextStyle(fontWeight: FontWeight.bold)
+          // style: TextStyle(fontWeight: FontWeight.bold)
         ),
         centerTitle: true,
         //backgroundColor: blue1,
@@ -49,7 +46,7 @@ class _QuizState extends State<Quiz> {
                     color: Colors.transparent,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: Colors.lightBlue.shade400,
+                      color: Colors.lightGreen.shade400,
                       style: BorderStyle.solid,
                     ),
                   ),
@@ -108,7 +105,7 @@ class _QuizState extends State<Quiz> {
           "correct",
           style: TextStyle(color: Colors.black54),
         ),
-        duration: Duration(milliseconds: 500),
+        duration: Duration(milliseconds: 1000),
         backgroundColor: Colors.greenAccent.shade100,
       );
 

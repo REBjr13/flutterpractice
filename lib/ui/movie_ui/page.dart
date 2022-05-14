@@ -15,7 +15,7 @@ class MovieListDetails extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Movie'),
-        backgroundColor: Colors.grey,
+        //backgroundColor: Colors.grey,
       ),
 
       body: ListView(
@@ -111,7 +111,7 @@ class MoviePoster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var borderRadius = BorderRadius.circular(40);
+    var borderRadius = BorderRadius.circular(4);
     return Card(
       child: ClipRRect(
         borderRadius: borderRadius,

@@ -24,10 +24,9 @@ class Movie extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Movie App', style: TextStyle(color: Colors.white)),
-            centerTitle: true,
-            backgroundColor: Colors.blueGrey.shade900),
-        backgroundColor: Colors.blueGrey.shade900,
+          title: Text('Movie App', style: TextStyle(color: Colors.white)),
+          centerTitle: true,
+        ),
         body: ListView.builder(
             itemCount: movieList.length,
             itemBuilder: (BuildContext context, int index) {
@@ -79,9 +78,9 @@ class Movie extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 120.0,
         child: Card(
-          color: Colors.black54,
+          // color: Colors.black54,
           child: Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 54),
+            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 30),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -95,10 +94,9 @@ class Movie extends StatelessWidget {
                         child: Text(
                           movie.title,
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                            color: Colors.white,
-                          ),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                              color: Colors.black54),
                         ),
                       ),
                       Text("Rating: ${movie.imdbRatings} / 10",
@@ -134,7 +132,7 @@ class Movie extends StatelessWidget {
 
   TextStyle mainTextStyle() {
     return TextStyle(
-      fontSize: 15,
+      fontSize: 10,
       color: Colors.grey,
     );
   }
