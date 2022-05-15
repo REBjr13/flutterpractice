@@ -77,6 +77,11 @@ flutter:
     - family: Allison
       fonts:
         - asset: font/Allison-Regular.ttf
+    - family: ChakraPetch
+      fonts:
+  #      - asset: font/ChakraPetch-Regular.ttf
+  #      - asset: font/ChakraPetch-Medium.tff
+        - asset: font/ChakraPetch-MediumItalic.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

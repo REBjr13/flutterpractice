@@ -38,7 +38,7 @@ TextTheme _appTextTheme(TextTheme base) {
         ),
       )
       .apply(
-        fontFamily: "RobotoCondensed",
+        fontFamily: "ChakraPetch",
         displayColor: Colors.amber,
         bodyColor: Colors.white70,
       ); //overwrites everything in base.copyWith
