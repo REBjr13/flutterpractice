@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter_application/classes/QuizApp.dart';
+import 'package:flutter_application/ui/mortgage_app.dart';
 
 // ignore: unused_import
 import 'ui/movie_ui/MovieApp.dart';
@@ -11,9 +12,9 @@ ThemeData _buildTheme() {
   final ThemeData base = ThemeData.dark();
   return base.copyWith(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: Colors.grey,
+    scaffoldBackgroundColor: Colors.green,
     primaryColor: Colors.lightGreen,
-    backgroundColor: Colors.blueGrey,
+    backgroundColor: Colors.green,
     textTheme: _appTextTheme(base.textTheme),
   );
 }
@@ -32,7 +33,7 @@ TextTheme _appTextTheme(TextTheme base) {
           fontFamily: "HinaMincho",
         ),
         button: base.button.copyWith(
-          fontSize: 14,
+          fontSize: 10,
           letterSpacing: 3.0,
           fontFamily: "RobotoCondensed",
         ),
@@ -47,5 +48,5 @@ TextTheme _appTextTheme(TextTheme base) {
 void main() => runApp(new MaterialApp(
       theme: _appTheme,
       debugShowCheckedModeBanner: true,
-      home: Quiz(),
+      home: MortgageApp(),
     ));
