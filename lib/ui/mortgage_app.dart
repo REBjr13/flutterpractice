@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'package:flutter_application/ui/util/colors.dart';
+
 class MortgageApp extends StatefulWidget {
   @override
   _MortgageAppState createState() => _MortgageAppState();
@@ -15,6 +17,8 @@ class _MortgageAppState extends State<MortgageApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 5.0,
+      shadowColor: secondaryBGreyDark,
         title: Text("Mortgage Payments"),
       ),
       body: Container(
@@ -29,10 +33,13 @@ class _MortgageAppState extends State<MortgageApp> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("Monthly Payment"),
+                    Text("Monthly Payment", style: TextStyle(fontSize: 15)),
                     SizedBox(height: 9),
                     Text(
-                        " ${(_homePrice > 0 && _interest > 0.0) ? "\$${calculateMonthlyPayment(_homePrice, _interest, _lengthOfLoan)}" : ""}")
+                      " ${(_homePrice > 0 && _interest > 0.0) ? "\$${calculateMonthlyPayment(_homePrice, _interest, _lengthOfLoan)}" : ""}",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    )
                   ],
                 ),
               ),
@@ -42,8 +49,8 @@ class _MortgageAppState extends State<MortgageApp> {
               decoration: BoxDecoration(
                   color: Colors.transparent,
                   border: Border.all(
-                      color: Colors.blueGrey.shade100, //TODO: theme this!
-                      style: BorderStyle.solid // //TODO: theme this!
+                      color: secondaryBGrey700,
+                      style: BorderStyle.solid 
                       ),
                   borderRadius: BorderRadius.circular(12)),
               child: Padding(
@@ -53,25 +60,20 @@ class _MortgageAppState extends State<MortgageApp> {
                     TextField(
                       keyboardType:
                           TextInputType.numberWithOptions(decimal: true),
-                      style: TextStyle(color: Colors.black), //TODO: theme this!
                       decoration: InputDecoration(
-                          prefixText: "Home Price",
-                          prefixIcon: Icon(Icons.home)),
+                          hintText: "Home Price", prefixIcon: Icon(Icons.home)),
                       onChanged: (String value) {
                         try {
                           _homePrice = double.parse(value);
                         } catch (exception) {
                           _homePrice = 0.0;
                         }
-                      }, //TODO: theme this!
+                      }, 
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text(
-                          "Length of Loan (years)",
-                          style: TextStyle(fontSize: 12),
-                        ), //TODO: Theme this!
+                        Text("Length of Loan (years)"), 
 
                         Row(
                           children: <Widget>[
@@ -91,12 +93,12 @@ class _MortgageAppState extends State<MortgageApp> {
                                 margin: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(16),
-                                    color: Colors.blueGrey.withOpacity(0.2)),
-                                child: Center(
-                                    child: Text("-")), //TODO: Style Theme it!
+                                    color: secondaryBGreyDark.withOpacity(0.2)),
+                                child: Center(child: Text("-")),
                               ),
                             ),
-                            Text("$_lengthOfLoan"), //TODO: Style Theme it!
+                            Text("$_lengthOfLoan",
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)), 
                             InkWell(
                               onTap: () {
                                 setState(() {
@@ -108,12 +110,10 @@ class _MortgageAppState extends State<MortgageApp> {
                                   height: 40,
                                   margin: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                      color: Colors.blueGrey.withOpacity(0.2),
+                                      color:
+                                          secondaryBGreyDark.withOpacity(0.2),
                                       borderRadius: BorderRadius.circular(16)),
-                                  child: Center(
-                                      child: Text("+")) //TODO: theme this!
-
-                                  ),
+                                  child: Center(child: Text("+"))),
                             )
                           ],
                         )
@@ -124,7 +124,7 @@ class _MortgageAppState extends State<MortgageApp> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text("Interest"), ////TODO: theme this!
+                        Text("Interest"), 
                         Padding(
                             padding: EdgeInsets.all(18),
                             child: Text("${_interest.toStringAsFixed(2)} %"))
@@ -137,8 +137,8 @@ class _MortgageAppState extends State<MortgageApp> {
                         Slider(
                             min: 0.0,
                             max: 10.0,
-                            activeColor: Colors.red, //TODO: Theme this!
-                            inactiveColor: Colors.grey, //TODO: Theme this!
+                            activeColor: Theme.of(context).primaryColorDark,
+                            inactiveColor: Theme.of(context).primaryColorLight,
                             // divisions: 10,
                             value: _interest,
                             onChanged: (double newValue) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter_application/classes/QuizApp.dart';
 import 'package:flutter_application/ui/mortgage_app.dart';
+import 'package:flutter_application/ui/util/colors.dart';
 
 // ignore: unused_import
 import 'ui/movie_ui/MovieApp.dart';
@@ -11,10 +12,16 @@ final ThemeData _appTheme = _buildTheme();
 ThemeData _buildTheme() {
   final ThemeData base = ThemeData.dark();
   return base.copyWith(
-    brightness: Brightness.dark,
-    scaffoldBackgroundColor: Colors.green,
-    primaryColor: Colors.lightGreen,
-    backgroundColor: Colors.green,
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: secondaryBGreyLight,
+    primaryColorLight: secondaryBGrey700,
+    primaryColorDark: secondaryBGreyDark,
+    hintColor: textOnPrimary,
+    cardColor: secondaryBGrey700,
+    inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            borderSide: BorderSide(color: primaryGreen900))),
     textTheme: _appTextTheme(base.textTheme),
   );
 }
@@ -25,12 +32,15 @@ TextTheme _appTextTheme(TextTheme base) {
         headline1: base.headline1.copyWith(
           fontWeight: FontWeight.w600,
         ),
-        bodyText2: base.bodyText1.copyWith(
+        bodyText2: base.bodyText2.copyWith(
           fontWeight: FontWeight.bold,
-          fontSize: 17,
-          color: Colors.black38,
-          letterSpacing: 1.0,
+          fontSize: 14,
+          // color: Colors.black,
+          letterSpacing: 0.5,
           fontFamily: "HinaMincho",
+        ),
+        bodyText1: base.bodyText1.copyWith(
+          color: textOnSecondary,
         ),
         button: base.button.copyWith(
           fontSize: 10,
