@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter_application/classes/QuizApp.dart';
+import 'package:flutter_application/parsing_json/json_parsing.dart';
+import 'package:flutter_application/parsing_json/json_parsing_map.dart';
 import 'package:flutter_application/ui/mortgage_app.dart';
 import 'package:flutter_application/ui/util/colors.dart';
 
@@ -58,5 +60,5 @@ TextTheme _appTextTheme(TextTheme base) {
 void main() => runApp(new MaterialApp(
       theme: _appTheme,
       debugShowCheckedModeBanner: true,
-      home: MortgageApp(),
+      home: JsonParsingMap(),
     ));
