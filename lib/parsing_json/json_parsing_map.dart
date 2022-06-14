@@ -55,15 +55,16 @@ Widget createListView(List data, BuildContext context) {
             children: [
               Divider(height: 1),
               ListTile(
+                onTap: () => debugPrint("button tapped"),
                 title: Text("${data[index].title}"),
                 trailing: Text("${data[index].id}"),
                 subtitle: Text('${data[index].body}'),
                 leading: Column(
                   children: [
                     CircleAvatar(
-                        backgroundColor: Colors.black12,
+                        backgroundColor: secondaryBGreyDark,
                         radius: 23.0,
-                        child: Text('${data[index].id}'))
+                        child: Text('${data[index].id}', style: TextStyle(color: textOnPrimary)))
                   ],
                 ),
               )
