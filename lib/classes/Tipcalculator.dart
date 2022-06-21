@@ -267,6 +267,7 @@ class _TipcalcState extends State<Tipcalc> {
   calculateTotalTip(double billAmount, int splitBy, int tipPercent) {
     double totalTip = 0.0;
 
+    // ignore: unnecessary_null_comparison
     if (billAmount < 0 || billAmount.toString().isEmpty || billAmount == null) {
     } else {
       totalTip = (billAmount * tipPercent) / 100;

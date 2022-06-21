@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, duplicate_ignore
+
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter_application/classes/QuizApp.dart';

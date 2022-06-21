@@ -173,6 +173,7 @@ class _MortgageAppState extends State<MortgageApp> {
     double c = interest / 12.0 / 100.0;
     double monthlyPayment = 0.0;
 
+    // ignore: unnecessary_null_comparison
     if (homePrice < 0 || homePrice.toString().isEmpty || homePrice == null) {
       //no go!
       // _homePrice = 0.0;
