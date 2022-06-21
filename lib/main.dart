@@ -5,7 +5,6 @@ import 'package:flutter_application/parsing_json/json_parsing.dart';
 import 'package:flutter_application/parsing_json/json_parsing_map.dart';
 import 'package:flutter_application/ui/mortgage_app.dart';
 import 'package:flutter_application/ui/util/colors.dart';
-import 'package:flutter_application/weather_app/weather_app.dart';
 
 // ignore: unused_import
 import 'ui/movie_ui/MovieApp.dart';
@@ -53,7 +52,7 @@ TextTheme _appTextTheme(TextTheme base) {
       )
       .apply(
         fontFamily: "ChakraPetch",
-        displayColor: textOnSecondary,
+        displayColor: Colors.amber,
         bodyColor: Colors.white70,
       ); //overwrites everything in base.copyWith
 }
@@ -61,5 +60,5 @@ TextTheme _appTextTheme(TextTheme base) {
 void main() => runApp(new MaterialApp(
       theme: _appTheme,
       debugShowCheckedModeBanner: true,
-      home: Weather_App(),
+      home: JsonParsingMap(),
     ));

@@ -10,5 +10,5 @@ const secondaryBGreyLight = const Color(0xFF718792);
 const secondaryBGreyDark = const Color(0xff1c313a);
 
 const textOnPrimary = const Color(0xffffffff);
-const textOnSecondary = Color.fromARGB(255, 0, 0, 0);
+const textOnSecondary = const Color(0xffffffff);
 const secondaryBackgroundWhite = const Color(0xffffffff);
