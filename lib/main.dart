@@ -56,7 +56,7 @@ TextTheme _appTextTheme(TextTheme base) {
       .apply(
         fontFamily: "ChakraPetch",
         displayColor: Colors.amber,
-        bodyColor: Colors.white70,
+        bodyColor: Colors.white,
       ); //overwrites everything in base.copyWith
 }
 
