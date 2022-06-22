@@ -10,11 +10,11 @@ class Weather_App extends StatefulWidget {
 
 class _Weather_AppState extends State<Weather_App> {
   late Future<WeatherForecastModel> forecastObject;
-  String _cityName = "Vancouver";
+  String _cityName = "";
   @override
   void initState() {
     super.initState();
-    forecastObject = Network().getWeatherForecast(cityName: _cityName);
+    forecastObject = getWeather(cityName: _cityName);
   }
 
   @override
@@ -47,7 +47,15 @@ class _Weather_AppState extends State<Weather_App> {
           prefixIcon: Icon(Icons.search),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           contentPadding: EdgeInsets.all(8)),
-      onSubmitted: (value) {},
+      onSubmitted: (value) {
+        setState(() {
+          _cityName = value;
+          forecastObject = getWeather(cityName: _cityName);
+        });
+      },
     ));
   }
+
+  Future<WeatherForecastModel> getWeather({required String cityName}) =>
+      new Network().getWeatherForecast(cityName: _cityName);
 }
